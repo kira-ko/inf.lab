@@ -58,5 +58,5 @@
 
 ![Снимок экрана от 2024-10-09 19-25-02](https://github.com/user-attachments/assets/4ca82ae2-78ef-40f5-895c-07dadee757f6)
 
-Вывод:
+
 
