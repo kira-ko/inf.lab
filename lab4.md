@@ -64,9 +64,54 @@ CMD ["aafire"]
 
 5. Собираю Docker-образ командой:
   ```bash
-  sudo docker build -t lab4_image .
+  sudo docker build -t aafire-suimage .
   ```
   Проверяю, что образ создан:
   ```bash
   sudo docker images
   ```
+6. Запуская первый и второй контейнер:
+```bash
+  sudo docker run -dit --name mucontainer1 aafire-image
+ sudo docker run -dit --name mucontainer2 aafire-image
+  ```
+Проверка, что оба контейнера работают:
+ ```bash
+  sudo docker ps
+  ```
+
+7. Создаю пользовательскую сеть:
+ ```bash
+  docker network create myNetwork
+  ```
+8.  Подключаю оба контейнера к созданной сети:
+ ```bash
+  sudo docker network connect myNetwork mycontainer1
+ sudo docker network connect myNetwork mycontainer2
+  ```
+ Проверяю параметры сети с поомщью команды:
+ ```bash
+  sudo docker network inspect myNetwork
+  ```
+
+9. Проверяю связь между контейнерами.
+Подключаюсь к первому контейнеру:
+```bash
+  sudo docker exec -it mycontainer1 bash
+  ```
+
+Проверяю связь с контейнером 2:
+```bash
+  ping 172.18.0.3
+  ```
+где 172.18.0.3 - IP-фдресс второго контейнера
+
+10. Чтобы увидить работу aafire
+внутри контейнера ввожу команду:
+```bash
+  aafire
+  ```
+
+
+
+
