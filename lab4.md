@@ -68,7 +68,7 @@ docker network inspect myNetwork
 
 5. Собираю Docker-образ командой:
   ```bash
-  sudo docker build -t aafire-suimage .
+  sudo docker build -t aafire-image .
   ```
   Проверяю, что образ создан:
   ```bash
@@ -77,7 +77,7 @@ docker network inspect myNetwork
 6. Запуская первый и второй контейнер:
 ```bash
   sudo docker run -dit --name mucontainer1 aafire-image
- sudo docker run -dit --name mucontainer2 aafire-image
+  sudo docker run -dit --name mucontainer2 aafire-image
   ```
 Проверка, что оба контейнера работают:
  ```bash
@@ -91,7 +91,7 @@ docker network inspect myNetwork
 8.  Подключаю оба контейнера к созданной сети:
  ```bash
   sudo docker network connect myNetwork mycontainer1
- sudo docker network connect myNetwork mycontainer2
+  sudo docker network connect myNetwork mycontainer2
   ```
  Проверяю параметры сети с поомщью команды:
  ```bash
