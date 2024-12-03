@@ -46,8 +46,7 @@ docker network inspect myNetwork
 4. Прописываю в файле следующие команды:
   ```bash
   FROM ubuntu:latest  
-  RUN apt-get update && apt-get install -y libaa-bin iputils-ping && apt-get clean
-  CMD ["aafire"]
+  RUN apt-get update && apt-get install -y libaa-bin fortune && apt-get install iputils-ping -y
   ```
   Здесь: 
   
@@ -55,20 +54,16 @@ docker network inspect myNetwork
   
   * вторая строка - устанавливаем нужные пакеты. 
   
-    - aafire — приложение, которое отображает анимацию огня в консоли.
     - iputils-ping — утилита для проверки соединения между устройствами через ICMP (используется для команды ping).
     - Флаг -y автоматически подтверждает установку, чтобы процесс не требовал ввода "да/нет".
-
     - Объединение через &&: Гарантирует, что вторая команда выполнится только после успешного выполнения первой.
-
-  * третья строка: функция CMD определяет команду по умолчанию, которая будет запускаться в контейнере при его старте.
 
 Сохраняю файл (Ctrl + O)
 Выйти (Ctrl + X)
 
 5. Собираю Docker-образ командой:
   ```bash
-  sudo docker build -t aafire-image .
+  sudo docker build -t libaa-bin .
   ```
   Проверяю, что образ создан:
   ```bash
@@ -76,8 +71,8 @@ docker network inspect myNetwork
   ```
 6. Запуская первый и второй контейнер:
 ```bash
-  sudo docker run -dit --name mucontainer1 aafire-image
-  sudo docker run -dit --name mucontainer2 aafire-image
+  sudo docker run -dit --name mycontainer1 libaa-bin
+  sudo docker run -dit --name mycontainer2 libaa-bin
   ```
 Проверка, что оба контейнера работают:
  ```bash
