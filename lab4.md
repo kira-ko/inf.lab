@@ -46,8 +46,8 @@ docker network inspect myNetwork
 4. Прописываю в файле следующие команды:
   ```bash
   FROM ubuntu:latest  
-RUN apt-get update && apt-get install -y aafire iputils-ping
-CMD ["aafire"]
+  RUN apt-get update && apt-get install -y libaa-bin iputils-ping && apt-get clean
+  CMD ["aafire"]
   ```
   Здесь: 
   
