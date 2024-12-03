@@ -27,6 +27,10 @@ docker network inspect myNetwork
 ----
 1. Устанавливаю Docker и проверяю, что он установлен с помощью команды:
  ```bash
+   sudo apt-get update && sudo apt-get install -y docker.io
+   ```
+
+ ```bash
    docker -- version
    ```
 
