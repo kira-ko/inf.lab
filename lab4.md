@@ -42,6 +42,7 @@ docker network inspect myNetwork
    ```bash
    nano Dockerfile
    ```
+![unnamed](https://github.com/user-attachments/assets/3c36f6e9-35d4-46d0-8da6-58d8d0e72070)
 
 4. Прописываю в файле следующие команды:
   ```bash
@@ -65,10 +66,15 @@ docker network inspect myNetwork
   ```bash
   sudo docker build -t libaa-bin .
   ```
+![unnamed](https://github.com/user-attachments/assets/139924f2-1046-4190-b5ce-91966ee47705)
+
   Проверяю, что образ создан:
   ```bash
   sudo docker images
   ```
+![unnamed](https://github.com/user-attachments/assets/e6f72163-ba27-4925-a3d0-7a0e44b8ccb8)
+
+
 6. Запуская первый и второй контейнер:
 ```bash
   sudo docker run -dit --name mycontainer1 libaa-bin
@@ -78,6 +84,8 @@ docker network inspect myNetwork
  ```bash
   sudo docker ps
   ```
+![unnamed](https://github.com/user-attachments/assets/30696c67-946b-4e14-995a-0d273d4f3d01)
+
 
 7. Создаю пользовательскую сеть:
  ```bash
@@ -88,10 +96,15 @@ docker network inspect myNetwork
   sudo docker network connect myNetwork mycontainer1
   sudo docker network connect myNetwork mycontainer2
   ```
+![unnamed](https://github.com/user-attachments/assets/6c239c95-fd72-4b81-86aa-54daeea90db0)
+
+
  Проверяю параметры сети с поомщью команды:
  ```bash
   sudo docker network inspect myNetwork
   ```
+![unnamed](https://github.com/user-attachments/assets/ac2ad424-9c14-401a-b34e-f46b3691616e)
+
 
 9. Проверяю связь между контейнерами.
 Подключаюсь к первому контейнеру:
