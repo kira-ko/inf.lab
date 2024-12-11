@@ -9,6 +9,17 @@
    sudo apt install git
    ```
 
+начальные установки:
+```bash
+ touch ~/.gitconfig
+ git config --global user.name "Ваше Имя"
+ git config --global user.email "ваш_email@example.com"
+ git config --global --list
+ git config --local user.name "Ваше Имя"
+ git config --local user.email "ваш_email@example.com"
+
+  ```
+
  2. Клонирую репозиторий
 ```bash
   sudo git clone https://github.com/kira-ko/git-practice.git
