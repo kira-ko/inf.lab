@@ -71,6 +71,12 @@
   sudo nano example.txt
 ```
 
+команда, чтобы проверить файлы в текущей директории:
+```bash
+  ls - la
+```
+
+
 ```bash
   git add example.txt
   git commit -m "Checking the file"
