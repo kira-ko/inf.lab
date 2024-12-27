@@ -91,7 +91,62 @@
 ```
 на этапе коммита в данном случае возникает ошибка "файл example2.txt не содержит подписи автора" и коммит не происходит, что и требовалось от меня в данной задачи
 
-Задача 2:
+Задача 2: Использование Git Flow в проекте
 ----
+1. Проверка, что Git Flow установлен
+```bash
+  sudo apt-get install git-flow
+```
+
+2. В корне репозитория выполняю команду:
+```bash
+  git flow init
+```
+
+3. Создаю ветку для нвоой функциональности:
+```bash
+  git flow feature start task-management
+```
+4. Создаю файл task_manager.py с кодом:
+```bash
+  def create_task(title, description):
+    # Логика создания задачи
+    print(f"Создана новая задача: {title}")
+```
+
+5. Комичу изменения:
+```bash
+  git add task_manager.py
+  git commit -m "Добавлен функционал управления задачами"
+```
+
+6. Завершение разработки фичи. Объединение ее с веткой develop
+```bash
+  git flow feature finish task-management
+```
+
+
+7. Создание релиза:
+```bash
+  git flow release start v1.0.0
+```
+
+8. Обновление файла version.txt
+```bash
+  echo "v1.0.0" > version.txt
+  git add version.txt
+  git commit -m "Обновлена версия для релиза v1.0.0"
+```
+
+9. Завершение реализа:
+```bash
+  git flow release finish v1.0.0
+```
+
+10. Отправка измений в удаленный репозиторий
+```bash
+  git push origin main
+  git push origin develop
+```
 
 
